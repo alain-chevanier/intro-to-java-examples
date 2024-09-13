@@ -65,7 +65,7 @@
             <manifest>
               <addClasspath>true</addClasspath>
               <classpathPrefix>lib/</classpathPrefix>
-              <mainClass>unam.ciencias.icc.App</mainClass>
+              <mainClass>${exec.mainClass}</mainClass>
             </manifest>
           </archive>
         </configuration>
