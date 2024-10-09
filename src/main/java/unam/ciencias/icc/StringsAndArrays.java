@@ -9,7 +9,7 @@ public class StringsAndArrays {
 
     char[] charArray = new char[5];
     // charArray (address, length)
-    // [ 0, 0, 0, 0, 0] (indexed de 0, (4) length - 1)
+    // [ 0, 0, 0, 0, 0] (indexed from 0 to (4) length - 1)
     charArray[4] = '&';
     // [0, 0, 0, 0, '&']
     System.out.println("charArray[4] -> " + charArray[4]);
@@ -20,13 +20,12 @@ public class StringsAndArrays {
     // [ 0, 0, 0, 0, '&', 0]
 
     char[] strCharArray = helloWorld.toCharArray();
-
     strCharArray[6] = 'X';
     System.out.println("strCharArray[6] -> " + strCharArray[6]);
     System.out.println("helloWorld[6] -> " + helloWorld.charAt(6));
 
-    String a = "HolaX";//"Hola Mundo!";
-    String b = "oHal";//"odHo! lanuM";
+    String a = "Hola Mundo!";
+    String b = "odHo! lanuM";
 
     System.out.printf("areAnagrams(%s, %s) -> %b\n", a, b, areAnagrams(a, b));
 
@@ -51,15 +50,14 @@ public class StringsAndArrays {
   }
 
   static boolean areAnagrams(String a, String b) {
-    // a & b son anagramas si contienen los mismos caracteres
-    // el mismo numero de veces
     if (a.length() != b.length()) {
       return false;
     }
-    //
+    // a & b are considered anagrams if both contain the same
+    // ocurrencies of the same characters
     for (char charInB : b.toCharArray()) {
-      int ocurrenciesInB = occurrencies(b, charInB);
-      int ocurrenciesInA = occurrencies(a, charInB);
+      int ocurrenciesInB = countOccurrenciesOf(charInB, b);
+      int ocurrenciesInA = countOccurrenciesOf(charInB, b);
       if (ocurrenciesInA != ocurrenciesInB) {
         return false;
       }
@@ -68,13 +66,15 @@ public class StringsAndArrays {
     return true;
   }
 
-  static int occurrencies(String str, char a) {
+  static int countOccurrenciesOf(char a, String str) {
     int count = 0;
 
     // for (int i = 0; i < str.length(); i++) {
     //   char current = str.charAt(i);
+    //   ...
     // }
 
+    // equivalent to the code above
     for (char current : str.toCharArray()) {
       if (current ==  a) {
         count++;
