@@ -42,9 +42,11 @@ public class BidimensionalArrays {
   public static int[][] buildPascalTriangle(int levels) {
     int[][] triangle = new int[levels][];
     for (int level = 0; level < triangle.length; level++) {
-      triangle[level] = new int[level + 1];
-      triangle[level][0] = 1;
-      triangle[level][level] = 1;
+      int[] array = new int[level + 1];
+      array[0] = 1;
+      array[level] = 1;
+
+      triangle[level] = array;
     }
     return triangle;
   }

@@ -2,11 +2,11 @@ package unam.ciencias.icc;
 
 import org.junit.jupiter.api.Test;
 
-import static unam.ciencias.icc.BidimensionalArrays.buildPascalTriangle;
-
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
 import static org.hamcrest.Matchers.equalTo;
+
+import static unam.ciencias.icc.BidimensionalArrays.buildPascalTriangle;
 
 public class BidimensionalArraysTest {
   @Test
