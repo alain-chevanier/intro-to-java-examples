@@ -9,6 +9,13 @@ import static org.hamcrest.Matchers.equalTo;
 import static unam.ciencias.icc.BidimensionalArrays.buildPascalTriangle;
 
 public class BidimensionalArraysTest {
+   @Test
+  public void test_ZeroLevels() {
+    var actual = buildPascalTriangle(0);
+    var expected = new int[][] {};
+    assertThat(actual, is(equalTo(expected)));
+  }
+
   @Test
   public void test_OneLevel() {
     var actual = buildPascalTriangle(1);
@@ -21,6 +28,15 @@ public class BidimensionalArraysTest {
     var actual = buildPascalTriangle(2);
     var expected = new int[][] {new int[] {1},
                                 new int[] {1, 1}};
+    assertThat(actual, is(equalTo(expected)));
+  }
+
+  @Test
+  public void test_ThreeLevels() {
+    var actual = buildPascalTriangle(3);
+    var expected = new int[][] {new int[] {1},
+                                new int[] {1, 1},
+                                new int[] {1, 2, 1}};
     assertThat(actual, is(equalTo(expected)));
   }
 
