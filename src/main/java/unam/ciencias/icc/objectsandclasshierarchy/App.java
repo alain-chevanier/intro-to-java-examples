@@ -5,7 +5,7 @@ public class App {
     Student ricchy = new Student();
     ricchy.setName("Ricchy");
     ricchy.setLastName("Chevanier");
-    ricchy.major = "Computer Sciences";
+    ricchy.setMajor("Computer Sciences");
 
     System.out.println("ricchy.fullName: " + ricchy.getFullName());
     System.out.println("ricchy.major: " + ricchy.major);
